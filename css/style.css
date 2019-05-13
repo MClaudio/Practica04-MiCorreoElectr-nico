@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../img/Passion.jpg");
+    background-repeat: no-repeat;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+body header{
+    background: #FBF7F4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    height: 4.5em;
+    width: 100%;
+}
+header .tittle{
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+header .menu{
+    display: flex;
+    align-items: center;
+}
+header .menu nav li{
+    list-style: none;
+    display: inline-block;
+}
+header .menu nav a{
+    text-decoration: none;
+    color: black;
+    padding: 0 5px;
+}
+header .menu nav a:hover{
+    color: #e53935;
+}
+header .userImg{
+display: flex;
+align-items: center;
+}
+header .imagen{
+    width: 60px;
+    height: 60px;
+    margin-right: 5px;
+}
+header .imagen img{
+    width: 100%;
+    border-radius: 50%;
+}
+header .imagen img:hover{
+    opacity: .7;
+}
+header .user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+header .user p span{
+    color: #e53935;
+}
+header .user a{
+    color: #000;
+}
+header .user a:hover{
+    color: #e53935;
+}
+body #contenedor h2{
+    text-align: center;
+    margin-top: 10px;
+}
+body section .buscar{
+    margin: 10px 0;
+}
+body section .buscar input[type=search]{
+    padding: 10px 5px;
+    width: 20em;
+    border: 1px solid #e53935;
+}
+body section .buscar input[type=button]{
+    width: 7em;
+    padding: 10px 5px;
+    background: #e53935;
+    border: none;
+    color: #FBF7F4;
+    cursor: pointer;
+}
+body section .buscar input[type=button]:hover{
+    background-color: #A40808;
+}
+
+body section .formulario{
+    text-align: center;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #FBF7F4;
+    border-radius: 20px;
+    width: 30em;
+    height: 35em;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.formulario>h2{
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-align: center;
+}
+.formulario form label{
+    display: block;
+    width: 10em;
+    float: left;
+    margin-top: 20px;
+    text-align: left;
+
+}
+.formulario form input{
+    padding: 10px 15px;
+    width: 20em;
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid #e53935;
+    background-color: #FBF7F4;
+    
+}
+.formulario form input[type=date]{
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+}
+.formulario form input[type=submit]{
+    background-color: #e53935;
+    width: 15em;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 15px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #FBF7F4;
+    font-size: 1em;
+}
+.formulario form input:hover{
+    border-bottom: 1px solid #e35d5b;
+}
+.formulario form input[type=submit]:hover{
+    background-color: #e35d5b;
+}
+.formulario form input[type=submit]:active{
+    background-color: #DB4227;
+}
+
+body section .crear_usuario{
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+body section .crear_usuario i{ 
+    font-size: 4em;
+    margin-top: 10px;
+}
+body section .crear_usuario i.fa-check-circle{
+    color: aquamarine;
+}
+body section .crear_usuario i.fa-exclamation-circle{
+    color: #DB4227;
+}
+body section .crear_usuario a{
+    text-transform: uppercase;
+    margin-top: 10px;
+    color: #000;
+    letter-spacing: 3px;
+}
+body section .crear_usuario a:hover{
+    color: #DB4227;
+}
+body section .formulario.login{
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer {
+    background-color: #E53935;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0;
+}
