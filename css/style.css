@@ -16,7 +16,7 @@ body header{
     justify-content: space-around;
     align-items: center;
     padding: 5px;
-    height: 4.5em;
+    height: 4em;
     width: 100%;
 }
 header .tittle{
@@ -79,6 +79,10 @@ body #contenedor h2{
     text-align: center;
     margin-top: 10px;
 }
+body section{
+    width: 100%;
+   /*  background-color: aqua; */
+}
 body section .buscar{
     margin: 10px 0;
 }
@@ -98,43 +102,43 @@ body section .buscar input[type=button]{
 body section .buscar input[type=button]:hover{
     background-color: #A40808;
 }
-
-body section .formulario{
-    text-align: center;
-    margin: auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
+body .formulario{
     background-color: #FBF7F4;
-    border-radius: 20px;
-    width: 30em;
-    height: 35em;
-    padding: 15px 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 40%;
+    margin: 25px auto;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+.formulario form{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
 }
 .formulario>h2{
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 4px;
     text-align: center;
+    
 }
-.formulario form label{
-    display: block;
-    width: 10em;
-    float: left;
-    margin-top: 20px;
-    text-align: left;
-
+.registro form label{
+    text-align: right;
+    margin-right: 5px;
+}
+.registro form{
+    grid-template-columns: 30% 1fr;
+}
+.registro form input[type=file]{
+    border: none;
 }
 .formulario form input{
     padding: 10px 15px;
-    width: 20em;
-    margin-top: 10px;
+    margin-top: 15px;
     border: none;
     border-bottom: 1px solid #e53935;
     background-color: #FBF7F4;
-    
 }
 .formulario form input[type=date]{
     font-family: 'Open Sans', sans-serif;
@@ -144,12 +148,23 @@ body section .formulario{
     background-color: #e53935;
     width: 15em;
     border-radius: 20px;
-    margin-top: 30px;
     padding: 15px 0;
     text-transform: uppercase;
     cursor: pointer;
     color: #FBF7F4;
     font-size: 1em;
+    grid-column: 2/3;
+}
+.login form{
+    width: 70%;
+    margin: 0 auto;
+}
+.login form input{
+    margin-top: 2em;
+}
+.login form input[type=submit]{
+    grid-column: 1/2;
+    margin: 2em auto;
 }
 .formulario form input:hover{
     border-bottom: 1px solid #e35d5b;
@@ -183,21 +198,43 @@ body section .crear_usuario a{
     color: #000;
     letter-spacing: 3px;
 }
-body section .crear_usuario a:hover{
-    color: #DB4227;
-}
-body section .formulario.login{
-    height: 20em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
 
 footer {
+    margin-top: 25px;
     background-color: #E53935;
     text-align: center;
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     padding: 10px 0;
 }
+footer.public{
+    background-color: #FBF7F4;
+}
+footer.registro{
+    display: none;
+}
+/* body .mensaje{
+    background-color: #FFF;
+    width: 50%;
+}
+body .mensaje form{
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    
+}body .mensaje form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body .mensaje textarea{
+    resize: none;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #e35d5b;
+} 
+body .mensaje input[type=email]{
+    width: 50%;
+} */

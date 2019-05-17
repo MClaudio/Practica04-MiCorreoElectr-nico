@@ -32,6 +32,11 @@
             </form>
         </div>
     </section>
+    <footer class="public">
+        <?php
+        include('../../php/footer.php');
+        ?>
+    </footer>
 </body>
 
 </html>

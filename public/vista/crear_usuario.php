@@ -23,7 +23,7 @@
         </div>
     </header>
     <section>
-        <div class="formulario">
+        <div class="formulario registro">
             <h2>Registro</h2>
             <form action="../controladores/crear_usuario.php" method="post">
                 <label for="cedula">Cedula</label>
@@ -44,11 +44,17 @@
                 <input type="password" name="pass" id="pass" required>
                 <label for="cpass">Confirmar Contraseña</label>
                 <input type="password" name="cpass" id="cpass" required>
-
+                <label for="foto">Foto de perfil</label>
+                <input type="file" name="foto" id="foto">
                 <input type="submit" value="Crear">
             </form>
         </div>
     </section>
+    <footer class="public registro">
+        <?php
+        include('../../php/footer.php');
+        ?>
+    </footer>
 </body>
 
 </html>

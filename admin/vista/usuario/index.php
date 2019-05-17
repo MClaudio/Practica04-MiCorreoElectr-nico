@@ -30,7 +30,6 @@ if (!isset($_SESSION['isLogin'])) {
         <section>
             <div class="buscar">
                 <input type="search" placeholder="Buscar">
-                <input type="button" value="Buscar">
             </div>
             <table>
                 <thead>
