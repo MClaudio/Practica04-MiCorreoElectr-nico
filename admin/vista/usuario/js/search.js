@@ -1,7 +1,6 @@
 function buscar(input) {
     let text = input.value.trim()
     //console.log(text)
-
     if (window.XMLHttpRequest) {
         xmlhttp = new XMLHttpRequest()
     } else {
@@ -14,5 +13,4 @@ function buscar(input) {
     };
     xmlhttp.open("GET", "../../controladores/user/buscar.php?key=" + text, true)
     xmlhttp.send()
-
 }
