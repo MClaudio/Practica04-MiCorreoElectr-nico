@@ -39,7 +39,7 @@
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
 
-            echo ($row['codigo']);
+
 
             $directorio = "../../img/fotos/" . $row['codigo'] . "/";
             mkdir($directorio, 0777, true);

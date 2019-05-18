@@ -17,6 +17,7 @@ if (!isset($_SESSION['isLogin'])) {
 </head>
 
 <body>
+
     <h1>Enviar Mensaje</h1>
     <?php
     include '../../../config/conexionBD.php';

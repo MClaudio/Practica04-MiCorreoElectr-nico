@@ -55,6 +55,7 @@ header .imagen{
 }
 header .imagen img{
     width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
 header .imagen img:hover{
@@ -251,6 +252,48 @@ body .mensaje form textarea{
     margin-top: 20px;
     width: 90%;
     border: 1px solid #e35d5b;
+}
+body .floatWindow{
+    background-image: url("../img/window.png");
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all ease 1s;
+    display: none;
+    
+}body .floatWindow .window{
+    width: 40%;
+    margin-top: 70px;
+}
+body .floatWindow .window p span{
+    color: #e35d5b;
+}
+body .floatWindow .window p{
+    margin-top: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e35d5b;
+    padding: 10px 0;
+}
+body .floatWindow .window p.msj{
+    background-color: #FBF7F4;
+    border: 1px solid #e35d5b;
+    padding: 15px;
+    height: 20%;
+    text-align: justify;
+}
+body .floatWindow .window input{
+    background-color: #e53935;
+    width: 15em;
+    border-radius: 20px;
+    padding: 15px 0;
+    margin-top: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #FBF7F4;
+    font-size: 1em;
+    border: none;
 }
 /* body .mensaje{
     background-color: #FFF;

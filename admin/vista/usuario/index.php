@@ -57,6 +57,7 @@ if (!isset($_SESSION['isLogin'])) {
                         </tr>
                     </tfoot>
                     -->
+
                 <tbody id="data">
                     <?php
                     include '../../../config/conexionBD.php';
@@ -69,8 +70,11 @@ if (!isset($_SESSION['isLogin'])) {
                             echo "<td>" . $row["mail_fecha"] . "</td>";
                             echo "<td>" . $row["usu_correo"] . "</td>";
                             echo "<td>" . $row["mail_asunto"] . "</td>";
-                            //echo "<td>" . $row["mail_mensaje"] . "</td>";
-                            echo '<td><a href="#">Leer</a></td>';
+                            echo ('<div id="floatWindow" class="floatWindow"></div>');
+                            $txt = 'De:';
+
+
+                            echo '<td><a onclick="openWindow(' . $row["mail_codigo"] . ',\'De:\',\'usu_remitente\')">Leer</a></td>';
                         }
                     } else {
                         echo "<tr>";

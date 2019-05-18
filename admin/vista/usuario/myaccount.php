@@ -40,6 +40,7 @@ if (!isset($_SESSION['isLogin'])) {
                         <td>Email</td>
                         <td>Telefono</td>
                         <td>Fecha Nacimiento</td>
+                        <td>Foto</td>
                         <td>Eliminar</td>
                         <td>Modificar</td>
                         <td>Cambiar contraseña</td>
@@ -76,6 +77,7 @@ if (!isset($_SESSION['isLogin'])) {
                         echo "<td>" . $row["usu_correo"] . "</td>";
                         echo "<td>" . $row["usu_telefono"] . "</td>";
                         echo "<td>" . $row["usu_fecha_nacimiento"] . "</td>";
+                        echo '<td><img src="../../../img/fotos/' . $row["usu_codigo"] . '/' . $row["usu_img"] . '" alt=""></td>';
                         if ((string)$row["usu_eliminado"] === 'N') {
                             echo '<td><a href="../../controladores/admin/deleteUser.php?usu_cod=' . $row["usu_codigo"] . '&delete=' . true . '">Eliminar</a></td>';
                         } else {

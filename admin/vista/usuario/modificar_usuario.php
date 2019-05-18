@@ -18,7 +18,7 @@ if (!isset($_SESSION['isLogin'])) {
     <header>
         <header>
             <?php
-            include('../../../php/headerAdmin.php');
+            include('../../../php/headerUser.php');
             ?>
         </header>
     </header>
@@ -31,9 +31,8 @@ if (!isset($_SESSION['isLogin'])) {
             $datos = urldecode($datos);
             $datos = unserialize($datos);
             ?>
-            <form enctype="multipart/form-data"
-                action="../../controladores/admin/updateUser.php?usu_codigo=<?php echo ($datos["usu_codigo"]) ?>"
-                method="post">
+            <form enctype="multipart/form-data" action="../../controladores/user/updateUser.php" method="post">
+                <input type="hidden" name="usu_codigo" value="<?php echo ($datos["usu_codigo"]); ?>">
                 <label for="cedula">Cedula</label>
                 <input type="text" name="cedula" id="cedula" value="<?php echo ($datos["usu_cedula"]); ?>" required>
                 <label for="nombre">Nombre</label>
