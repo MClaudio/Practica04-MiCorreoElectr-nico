@@ -59,16 +59,14 @@ if (!isset($_SESSION['isLogin'])) {
                 <tbody>
                     <?php
                     include '../../../config/conexionBD.php';
-                    $sql = "SELECT * FROM mensaje INNER JOIN usuario ON mensaje.usu_remitente = usuario.usu_codigo WHERE mensaje.usu_remitente=" . $_SESSION['codigo'] . ";";
+                    $sql = "SELECT * FROM usuario usu, mensaje msj WHERE usu.usu_codigo=msj.usu_remitente AND 
+                    msj.usu_remitente=" . $_SESSION['codigo'] . ";";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>" . $row["mail_fecha"] . "</td>";
-                            $sqlRemitente = "SELECT usu_correo FROM usuario WHERE usu_codigo=" . $row["usu_destino"] . ";";
-                            $resultRemitente = $conn->query($sqlRemitente);
-                            $rowRemitente = $resultRemitente->fetch_assoc();
-                            echo "<td>" . $rowRemitente["usu_correo"] . "</td>";
+                            echo "<td>" . $row["usu_correo"] . "</td>";
                             echo "<td>" . $row["mail_asunto"] . "</td>";
                             //echo "<td>" . $row["mail_mensaje"] . "</td>";
                             echo '<td><a href="#">Leer</a></td>';
