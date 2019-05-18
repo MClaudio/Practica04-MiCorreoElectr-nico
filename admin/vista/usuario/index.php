@@ -16,6 +16,7 @@ if (!isset($_SESSION['isLogin'])) {
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="js/search.js"></script>
     <title>Inicio</title>
 </head>
 
@@ -29,7 +30,7 @@ if (!isset($_SESSION['isLogin'])) {
         <h2>Mensajes Recibidos</h2>
         <section>
             <div class="buscar">
-                <input type="search" placeholder="Buscar">
+                <input type="search" id="buscarRemitente" placeholder="Buscar por remitente" onkeyup="buscar(this)">
             </div>
             <table>
                 <thead>
@@ -56,7 +57,7 @@ if (!isset($_SESSION['isLogin'])) {
                         </tr>
                     </tfoot>
                     -->
-                <tbody>
+                <tbody id="data">
                     <?php
                     include '../../../config/conexionBD.php';
                     $sql = "SELECT * FROM mensaje INNER JOIN usuario ON mensaje.usu_destino = usuario.usu_codigo WHERE mensaje.usu_destino=" . $_SESSION['codigo'] . ";";
