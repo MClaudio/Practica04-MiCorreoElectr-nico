@@ -20,13 +20,13 @@ if (!isset($_SESSION['isLogin'])) {
 </head>
 
 <body>
+
     <header>
-        <header>
-            <?php
-            include('../../../php/headerUser.php');
-            ?>
-        </header>
+        <?php
+        include('../../../php/headerUser.php');
+        ?>
     </header>
+
     <div id="contenedor">
         <h2>Mi Cuenta</h2>
         <section>

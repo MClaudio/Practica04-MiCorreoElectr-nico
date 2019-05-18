@@ -16,7 +16,7 @@ if (!isset($_SESSION['isLogin'])) {
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>Inicio</title>
+    <title>Mensajes enviados</title>
 </head>
 
 <body>
@@ -26,7 +26,7 @@ if (!isset($_SESSION['isLogin'])) {
         ?>
     </header>
     <div id="contenedor">
-        <h2>Mensajes Recibidos</h2>
+        <h2>Mensajes Enviados</h2>
         <section>
             <div class="buscar">
                 <input type="search" placeholder="Buscar">
@@ -35,7 +35,7 @@ if (!isset($_SESSION['isLogin'])) {
                 <thead>
                     <tr>
                         <td>Fecha</td>
-                        <td>Remitente</td>
+                        <td>Destino</td>
                         <td>Asunto</td>
                         <td></td>
                     </tr>
@@ -59,13 +59,13 @@ if (!isset($_SESSION['isLogin'])) {
                 <tbody>
                     <?php
                     include '../../../config/conexionBD.php';
-                    $sql = "SELECT * FROM mensaje INNER JOIN usuario ON mensaje.usu_destino = usuario.usu_codigo WHERE mensaje.usu_destino=" . $_SESSION['codigo'] . ";";
+                    $sql = "SELECT * FROM mensaje INNER JOIN usuario ON mensaje.usu_remitente = usuario.usu_codigo WHERE mensaje.usu_remitente=" . $_SESSION['codigo'] . ";";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>" . $row["mail_fecha"] . "</td>";
-                            $sqlRemitente = "SELECT usu_correo FROM usuario WHERE usu_codigo=" . $row["usu_remitente"] . ";";
+                            $sqlRemitente = "SELECT usu_correo FROM usuario WHERE usu_codigo=" . $row["usu_destino"] . ";";
                             $resultRemitente = $conn->query($sqlRemitente);
                             $rowRemitente = $resultRemitente->fetch_assoc();
                             echo "<td>" . $rowRemitente["usu_correo"] . "</td>";

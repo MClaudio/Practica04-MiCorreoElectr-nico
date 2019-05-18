@@ -4,7 +4,7 @@
         <ul>
             <li><a href="index.php">Inicio</a></li>
             <li><a href="newmail.php">Nuevo Mensaje</a></li>
-            <li><a href="#">Mensajes Enviados</a></li>
+            <li><a href="sendmail.php">Mensajes Enviados</a></li>
             <li><a href="myaccount.php">Mi Cuenta</a></li>
             <li><a href="../../../config/sessionEnd.php">Cerrar Sesion</a></li>
         </ul>

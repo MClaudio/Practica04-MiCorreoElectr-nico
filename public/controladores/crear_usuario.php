@@ -16,7 +16,7 @@
         <div class="menu">
             <nav>
                 <ul>
-                    <li><a href="crear_usuario.php">Rgistro</a></li>
+                    <li><a href="../vista/crear_usuario.php">Rgistro</a></li>
                 </ul>
             </nav>
         </div>
@@ -38,8 +38,7 @@
             $fechaNac = isset($_POST["fechaNac"]) ? trim($_POST["fechaNac"]) : null;
             $pass = isset($_POST["pass"]) ? trim($_POST["pass"]) : null;
             $cpass = isset($_POST["cpass"]) ? trim($_POST["cpass"]) : null;
-            $sql = "INSERT INTO usuario VALUES (
-                    0, 
+            $sql = "INSERT INTO usuario (usu_cedula, usu_nombres, usu_apellidos, usu_direccion, usu_telefono, usu_correo, usu_password, usu_fecha_nacimiento) VALUES (
                     '$cedula', 
                     '$nombre', 
                     '$apellido', 
@@ -47,10 +46,7 @@
                     '$telefono',
                     '$email', 
                     MD5('$pass'), 
-                    '$fechaNac', 
-                    'N',
-                    null, 
-                    null    
+                    '$fechaNac'
                 )";
             if ($pass == $cpass) {
                 if ($conn->query($sql) == true) {
@@ -71,7 +67,7 @@
             }
             $conn->close();
             ?>
-            <a href="../vista/crear_usuario.html">Regresar</a>
+            <a href="../vista/crear_usuario.php">Regresar</a>
         </div>
     </section>
 </body>

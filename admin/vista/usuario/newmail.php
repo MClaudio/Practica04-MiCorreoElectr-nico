@@ -30,10 +30,11 @@ if (!isset($_SESSION['isLogin'])) {
             <h2>Nuevo mensaje</h2>
             <form action="../../controladores/user/newemail.php" method="POST">
                 <input type="hidden" name="codigoRemitente" value="<?php echo ($_SESSION['codigo']) ?>">
-                <input type="mail" name="emailDestino" id="emailDestino" required placeholder="Destino">
-                <input type="text" name="asunto" id="asunto" value="Prueba">
-                <textarea name="mensaje" id="mensaje" cols="50" rows="20" placeholder="Mensaje"></textarea>
-                <input type="submit" value="Ingresar">
+                <input type="mail" name="emailDestino" id="emailDestino" required placeholder="Correo de destino"
+                    required>
+                <input type="text" name="asunto" id="asunto" placeholder="Asunto" required>
+                <textarea name="mensaje" id="mensaje" cols="50" rows="20" placeholder="Mensaje" required></textarea>
+                <input type="submit" value="Enviar">
             </form>
         </div>
     </section>

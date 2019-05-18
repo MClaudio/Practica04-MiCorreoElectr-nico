@@ -200,7 +200,7 @@ body section .crear_usuario a{
 }
 
 
-footer {
+/* footer {
     margin-top: 25px;
     background-color: #E53935;
     text-align: center;
@@ -214,6 +214,26 @@ footer.public{
 }
 footer.registro{
     display: none;
+} */
+
+body .mensaje{
+    background-color: #FFF;
+    border-radius: 20px;
+}
+body .mensaje form{
+    display: flex;
+    flex-direction: column;
+}
+body .mensaje form input{
+    width: 90%;
+    background-color: #FFF;
+}
+body .mensaje form textarea{
+    resize: none;
+    padding: 10px;
+    margin-top: 20px;
+    width: 90%;
+    border: 1px solid #e35d5b;
 }
 /* body .mensaje{
     background-color: #FFF;
