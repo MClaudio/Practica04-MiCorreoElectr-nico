@@ -22,21 +22,21 @@ if (!isset($_SESSION['isLogin'])) {
         <div class="menu">
             <nav>
                 <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="usuarios.php">Usuarios</a></li>
-                    <li><a href="#">Mi cuenta</a></li>
+                    <li><a href="../../vista/usuario/index.php">Inicio</a></li>
+                    <li><a href="../../vista/usuario/usuarios.php">Usuarios</a></li>
+                    <li><a href="../../vista/usuario/myaccount.php">Mi cuenta</a></li>
+                    <li><a href="../../../config/sessionEnd.php">Cerrar Sesion</a></li>
                 </ul>
             </nav>
         </div>
         <div class="user">
             <div class="userImg">
                 <div class="imagen">
-                    <img src="../../../img/fotos/foto.png" alt="">
+                    <img src="<?php echo ('../../../img/fotos/' . $_SESSION["codigo"] . '/' . $_SESSION["img"]) ?>"
+                        alt="">
                 </div>
                 <p><span><?php echo ($_SESSION['nombre'] . ' ' . $_SESSION['apellido']) ?></span></p>
             </div>
-            <a href='../../../config/sessionEnd.php'>Cerrar Sesion</a>
-
         </div>
     </header>
     <section>
@@ -48,9 +48,7 @@ if (!isset($_SESSION['isLogin'])) {
             $temp = $_FILES['foto']['tmp_name'];
             $type = $_FILES['foto']['type'];
 
-            echo ($_FILES['foto']['name']);
-
-            move_uploaded_file($temp, "../../../img/fotos/" . $row['codigo'] . "/$foto");
+            move_uploaded_file($temp, "../../../img/fotos/" . $_POST["usu_codigo"] . "/$foto");
 
             $cedula = isset($_POST["cedula"]) ? trim($_POST["cedula"]) : null;
             $nombre = isset($_POST["nombre"]) ? mb_strtoupper(trim($_POST["nombre"]), 'UTF-8') : null;
@@ -59,7 +57,7 @@ if (!isset($_SESSION['isLogin'])) {
             $telefono = isset($_POST["telefono"]) ? trim($_POST["telefono"]) : null;
             $email = isset($_POST["email"]) ? trim($_POST["email"]) : null;
             $fechaNac = isset($_POST["fechaNac"]) ? trim($_POST["fechaNac"]) : null;
-            $cod = $_GET["usu_codigo"];
+            $cod = $_POST["usu_codigo"];
             $date = date(date("Y-m-d H:i:s"));
             $sql = "UPDATE usuario SET
                         usu_cedula='" . $cedula . "',

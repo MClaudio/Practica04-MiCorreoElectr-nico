@@ -14,7 +14,8 @@ if (!isset($_SESSION['isLogin'])) {
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/admin_style.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Mi cuenta</title>
 </head>
 
@@ -39,6 +40,7 @@ if (!isset($_SESSION['isLogin'])) {
                         <td>Email</td>
                         <td>Telefono</td>
                         <td>Fecha Nacimiento</td>
+                        <td>Foto</td>
                         <td>Eliminar</td>
                         <td>Modificar</td>
                         <td>Cambiar contraseña</td>
@@ -62,7 +64,6 @@ if (!isset($_SESSION['isLogin'])) {
                 -->
                 <tbody>
                     <?php
-
                     include '../../../config/conexionBD.php';
                     $sql = "SELECT * FROM usuario WHERE usu_codigo=" . $_SESSION['codigo'] . ";";
                     $result = $conn->query($sql);
@@ -76,6 +77,7 @@ if (!isset($_SESSION['isLogin'])) {
                         echo "<td>" . $row["usu_correo"] . "</td>";
                         echo "<td>" . $row["usu_telefono"] . "</td>";
                         echo "<td>" . $row["usu_fecha_nacimiento"] . "</td>";
+                        echo '<td><img src="../../../img/fotos/' . $row["usu_codigo"] . '/' . $row["usu_img"] . '" alt=""></td>';
                         if ((string)$row["usu_eliminado"] === 'N') {
                             echo '<td><a href="../../controladores/admin/deleteUser.php?usu_cod=' . $row["usu_codigo"] . '&delete=' . true . '">Eliminar</a></td>';
                         } else {

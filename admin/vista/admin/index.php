@@ -57,6 +57,9 @@ if (!isset($_SESSION['isLogin'])) {
                 <tbody>
                     <?php
                     include '../../../config/conexionBD.php';
+                    //$sql = "SELECT * FROM usuario usu, mensaje msj WHERE usu.usu_codigo=msj.usu_remitente AND 
+                    //msj.usu_destino=" . $_SESSION['codigo'] . ";";
+
                     $sql = "SELECT * FROM mensaje INNER JOIN usuario ON mensaje.usu_destino = usuario.usu_codigo ORDER BY 1;";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
@@ -74,7 +77,7 @@ if (!isset($_SESSION['isLogin'])) {
                             echo "<td>" . $rowDestino["usu_correo"] . "</td>";
 
                             echo "<td>" . $row["mail_asunto"] . "</td>";
-                            echo '<td><a href="#">Eliminar</a></td>';
+                            echo '<td><a href="../../controladores/admin/deleteMSJ.php?usu_cod=' . $row["mail_codigo"] . '">Eliminar</a></td>';
                         }
                     } else {
                         echo "<tr>";

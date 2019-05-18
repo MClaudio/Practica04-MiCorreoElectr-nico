@@ -11,13 +11,11 @@ if (!isset($_SESSION['isLogin'])) {
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>Mensaje enviado</title>
+    <title>Modificar Usuario</title>
 </head>
 
 <body>
@@ -45,46 +43,55 @@ if (!isset($_SESSION['isLogin'])) {
         </div>
     </header>
     <section>
-
         <div class="formulario crear_usuario">
-
             <?php
             include '../../../config/conexionBD.php';
-            $codigoRemitente = isset($_POST["codigoRemitente"]) ? trim($_POST["codigoRemitente"]) : null;
-            $emailDestino = isset($_POST["emailDestino"]) ? trim($_POST["emailDestino"]) : null;
-            $asunto = isset($_POST["asunto"]) ? trim($_POST["asunto"]) : null;
-            $mensaje = isset($_POST["mensaje"]) ? trim($_POST["mensaje"]) : null;
+            $epass = isset($_POST["epass"]) ? trim($_POST["epass"]) : null;
+            $pass = isset($_POST["pass"]) ? trim($_POST["pass"]) : null;
+            $cpass = isset($_POST["cpass"]) ? trim($_POST["cpass"]) : null;
+            $cod = isset($_POST["cod"]) ? trim($_POST["cod"]) : null;
 
-            $sql = "SELECT usu_codigo FROM usuario WHERE usu_correo ='$emailDestino';";
-
+            $sql = "SELECT usu_password FROM usuario WHERE usu_codigo='$cod';";
             $result = $conn->query($sql);
-            $row = $result->fetch_assoc();
-            $codigoDestino = $row["usu_codigo"];
+            $result = $result->fetch_assoc();
+            $date = date(date("Y-m-d H:i:s"));
 
-            $sqlInsert = "INSERT INTO mensaje VALUES (
-                0, 
-                null, 
-                '$asunto', 
-                '$mensaje', 
-                '$codigoRemitente', 
-                '$codigoDestino'  
-            )";
-
-            if ($conn->query($sqlInsert) == true) {
-                echo "<h2>Mensaje enviado con exito</h2>";
-                echo '<i class="far fa-check-circle"></i>';
-                echo '<a href="../../vista/usuario/sendmail.php">Regresar</a>';
+            if (MD5($epass) === $result["usu_password"]) {
+                if ($pass === $cpass) {
+                    $sql = "UPDATE usuario SET usu_password = MD5('$pass'), usu_fecha_modificacion='$date' WHERE usu_codigo='$cod'";
+                    if ($conn->query($sql) == true) {
+                        noerro();
+                    } else {
+                        echo "<h2>Error al actualizar la contraseña " . mysqli_error($conn) . "</h2>";
+                        error($cod);
+                    }
+                } else {
+                    echo "<h2>Las contraseñas no coinciden</h2>";
+                    error($cod);
+                }
             } else {
-
-                echo "<h2>Error al enviar el mensaje: " . mysqli_error($conn) . "</h2>";
-                echo '<i class="fas fa-exclamation-circle"></i>';
-                echo '<a href="../../vista/usuario/newmail.php">Regresar</a>';
+                echo "<h2>La contraseña no existe en el sistema</h2>";
+                error($cod);
             }
             $conn->close();
 
+            function noerro()
+            {
+                echo "<h2>Contraseña actualizada con exito</h2>";
+                echo '<i class="far fa-check-circle"></i>';
+                echo '<a href="../../vista/usuario/index.php">Regresar</a>';
+            }
+            function error($cod)
+            {
+                echo '<i class="fas fa-exclamation-circle"></i>';
+                echo '<a href="../../vista/usuario/modificar_pass.php?usu_cod=' . $cod . '">Regresar</a>';
+            }
+
             ?>
 
+
         </div>
+    </section>
 </body>
 
 </html>

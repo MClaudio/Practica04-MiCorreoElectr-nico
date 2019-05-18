@@ -24,21 +24,21 @@ if (!isset($_SESSION['isLogin'])) {
         <div class="menu">
             <nav>
                 <ul>
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="usuarios.php">Usuarios</a></li>
-                    <li><a href="#">Mi cuenta</a></li>
+                    <li><a href="../../vista/usuario/index.php">Inicio</a></li>
+                    <li><a href="../../vista/usuario/usuarios.php">Usuarios</a></li>
+                    <li><a href="../../vista/usuario/myaccount.php">Mi cuenta</a></li>
+                    <li><a href="../../../config/sessionEnd.php">Cerrar Sesion</a></li>
                 </ul>
             </nav>
         </div>
         <div class="user">
             <div class="userImg">
                 <div class="imagen">
-                    <img src="../../../img/fotos/foto.png" alt="">
+                    <img src="<?php echo ('../../../img/fotos/' . $_SESSION["codigo"] . '/' . $_SESSION["img"]) ?>"
+                        alt="">
                 </div>
                 <p><span><?php echo ($_SESSION['nombre'] . ' ' . $_SESSION['apellido']) ?></span></p>
             </div>
-            <a href='../../../config/sessionEnd.php'>Cerrar Sesion</a>
-
         </div>
     </header>
     <section>
