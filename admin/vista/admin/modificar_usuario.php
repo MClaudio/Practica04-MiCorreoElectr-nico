@@ -25,7 +25,7 @@ if (!isset($_SESSION['isLogin'])) {
         </header>
     </header>
     <section>
-        <div class="formulario">
+        <div class="formulario registro">
             <h2>Editar Datos</h2>
             <?php
             $data = $_GET["user"];
@@ -53,7 +53,11 @@ if (!isset($_SESSION['isLogin'])) {
                     required>
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" value="<?php echo ($datos["usu_correo"]); ?>" required>
-
+                <div class="userFoto">
+                    <img src="../../../img/fotos/foto.png" alt="">
+                    <input type="file" name="foto" id="foto">
+                    <label for="foto">Foto de perfil</label>
+                </div>
                 <input type="submit" value="Actualizar">
             </form>
         </div>

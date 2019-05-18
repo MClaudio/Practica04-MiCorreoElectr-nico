@@ -44,7 +44,7 @@
                 $_SESSION['codigo'] = $user["usu_codigo"];
                 $_SESSION['nombre'] = $user["usu_nombres"];
                 $_SESSION['apellido'] = $user["usu_apellidos"];
-                $_SESSION['img'] = '';
+                $_SESSION['img'] = $user["usu_img"];
                 $_SESSION['rol'] = $user["usu_rol"];
                 if ($_SESSION['rol'] == 'admin') {
                     header("Refresh:2; url=../../admin/vista/admin/index.php");

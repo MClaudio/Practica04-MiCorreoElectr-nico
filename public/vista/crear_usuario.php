@@ -25,7 +25,7 @@
     <section>
         <div class="formulario registro">
             <h2>Registro</h2>
-            <form action="../controladores/crear_usuario.php" method="post">
+            <form enctype="multipart/form-data" action="../controladores/crear_usuario.php" method="post">
                 <label for="cedula">Cedula</label>
                 <input type="text" name="cedula" id="cedula" required>
                 <label for="nombre">Nombre</label>
@@ -44,8 +44,11 @@
                 <input type="password" name="pass" id="pass" required>
                 <label for="cpass">Confirmar Contraseña</label>
                 <input type="password" name="cpass" id="cpass" required>
-                <label for="foto">Foto de perfil</label>
-                <input type="file" name="foto" id="foto">
+                <div class="userFoto">
+                    <img src="../../img/fotos/foto.png" alt="">
+                    <input type="file" name="foto" id="foto">
+                    <label for="foto">Foto de perfil</label>
+                </div>
                 <input type="submit" value="Crear">
             </form>
         </div>

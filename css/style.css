@@ -104,7 +104,7 @@ body section .buscar input[type=button]:hover{
 }
 body .formulario{
     background-color: #FBF7F4;
-    width: 40%;
+    width: 55%;
     margin: 25px auto;
     text-align: center;
     padding: 15px;
@@ -128,10 +128,24 @@ body .formulario{
     margin-right: 5px;
 }
 .registro form{
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-column-gap: 10px;
+}
+.registro form .userFoto{
+    grid-column: 3/4;
+    grid-row: 1/9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.registro form .userFoto img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
 }
 .registro form input[type=file]{
     border: none;
+    width: 100%;
 }
 .formulario form input{
     padding: 10px 15px;
@@ -155,8 +169,11 @@ body .formulario{
     font-size: 1em;
     grid-column: 2/3;
 }
+body .login{
+    width: 30%;
+}
 .login form{
-    width: 70%;
+    
     margin: 0 auto;
 }
 .login form input{

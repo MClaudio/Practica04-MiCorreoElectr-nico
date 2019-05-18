@@ -12,7 +12,7 @@
 <div class="user">
     <div class="userImg">
         <div class="imagen">
-            <img src="../../../img/fotos/foto.png" alt="">
+            <img src="<?php echo ('../../../img/fotos/' . $_SESSION["codigo"] . '/' . $_SESSION["img"]) ?>" alt="">
         </div>
         <p><span><?php echo ($_SESSION['nombre'] . ' ' . $_SESSION['apellido']) ?></span></p>
     </div>

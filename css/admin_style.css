@@ -45,6 +45,10 @@ body{
 #contenedor section table tbody tr td{
     font-weight: normal;
 }
+#contenedor section table tbody tr td img{
+    width: 50px;
+    height: 50px;
+}
 #contenedor section table tbody tr .db_null{
     color: #A40808;
     font-weight: 700;
