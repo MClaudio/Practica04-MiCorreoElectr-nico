@@ -53,7 +53,7 @@
             </form>
         </div>
     </section>
-    <footer class="public registro">
+    <footer class="extend">
         <?php
         include('../../php/footer.php');
         ?>

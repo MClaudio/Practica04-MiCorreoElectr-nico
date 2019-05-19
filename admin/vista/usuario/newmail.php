@@ -38,7 +38,7 @@ if (!isset($_SESSION['isLogin'])) {
             </form>
         </div>
     </section>
-    <footer class="mail">
+    <footer class="extend red">
         <?php
         include('../../../php/footer.php');
         ?>

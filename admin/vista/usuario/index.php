@@ -71,8 +71,6 @@ if (!isset($_SESSION['isLogin'])) {
                             echo "<td>" . $row["usu_correo"] . "</td>";
                             echo "<td>" . $row["mail_asunto"] . "</td>";
                             echo ('<div id="floatWindow" class="floatWindow"></div>');
-                            $txt = 'De:';
-
 
                             echo '<td><a onclick="openWindow(' . $row["mail_codigo"] . ',\'De:\',\'usu_remitente\')">Leer</a></td>';
                         }
@@ -90,7 +88,7 @@ if (!isset($_SESSION['isLogin'])) {
 
         </section>
     </div>
-    <footer>
+    <footer class="red">
         <?php
         include('../../../php/footer.php');
         ?>

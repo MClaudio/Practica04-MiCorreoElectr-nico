@@ -91,6 +91,11 @@ if (!isset($_SESSION['isLogin'])) {
 
         </div>
     </section>
+    <footer>
+        <?php
+        include('../../../php/footer.php');
+        ?>
+    </footer>
 </body>
 
 </html>

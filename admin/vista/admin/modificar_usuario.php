@@ -61,7 +61,7 @@ if (!isset($_SESSION['isLogin'])) {
             </form>
         </div>
     </section>
-    <footer>
+    <footer class="extend">
         <?php
         include('../../../php/footer.php');
         ?>

@@ -88,6 +88,11 @@ if (!isset($_SESSION['isLogin'])) {
             <a href="../../vista/admin/usuarios.php">Regresar</a>
         </div>
     </section>
+    <footer>
+        <?php
+        include('../../../php/footer.php');
+        ?>
+    </footer>
 </body>
 
 </html>

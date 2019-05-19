@@ -105,7 +105,7 @@ if (!isset($_SESSION['isLogin'])) {
             ?>
         </section>
     </div>
-    <footer>
+    <footer class="red">
         <?php
         include('../../../php/footer.php');
         ?>

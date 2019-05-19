@@ -18,6 +18,7 @@ body header{
     padding: 5px;
     height: 4em;
     width: 100%;
+    border-bottom: 1px solid #e53935;
 }
 header .tittle{
     text-transform: uppercase;
@@ -217,23 +218,6 @@ body section .crear_usuario a{
     letter-spacing: 3px;
 }
 
-
-/* footer {
-    margin-top: 25px;
-    background-color: #E53935;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    padding: 10px 0;
-}
-footer.public{
-    background-color: #FBF7F4;
-}
-footer.registro{
-    display: none;
-} */
-
 body .mensaje{
     background-color: #FFF;
     border-radius: 20px;
@@ -294,6 +278,20 @@ body .floatWindow .window input{
     color: #FBF7F4;
     font-size: 1em;
     border: none;
+}
+footer{
+    background-color: #FBF7F4;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+footer.extend{
+    position: relative;
+}
+footer.red{
+    background-color: #e53935;
 }
 /* body .mensaje{
     background-color: #FFF;

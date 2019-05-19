@@ -5,7 +5,6 @@ body{
     background: #FBF7F4;
 }
 #contenedor{
-    border-top: 1px solid #e53935;
     display: flex;
     flex-direction: column;
     justify-content: center;
