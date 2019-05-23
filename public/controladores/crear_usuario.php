@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['isLogin'])) {
+    header("Location: ../../admin/vista/usuario/index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,7 +39,7 @@
             $temp = $_FILES['foto']['tmp_name'];
             $type = $_FILES['foto']['type'];
 
-            echo ($_FILES['foto']['name']);
+            //echo ($_FILES['foto']['name']);
 
             $sql = "SELECT MAX(usu_codigo)+1 AS codigo  FROM usuario;";
             $result = $conn->query($sql);
