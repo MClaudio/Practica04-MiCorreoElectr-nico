@@ -30,7 +30,8 @@ if (!isset($_SESSION['isLogin'])) {
         <h2>Mensajes Recibidos</h2>
         <section>
             <div class="buscar">
-                <input type="search" id="buscarRemitente" placeholder="Buscar por remitente" onkeyup="buscar(this)">
+                <input type="search" id="buscarRemitente" placeholder="Buscar por remitente"
+                    onkeyup="buscar(this, 'index')">
             </div>
             <table>
                 <thead>

@@ -1,4 +1,4 @@
-function buscar(input) {
+function buscar(input, usu) {
     let text = input.value.trim()
     //console.log(text)
     if (window.XMLHttpRequest) {
@@ -11,8 +11,13 @@ function buscar(input) {
             document.getElementById("data").innerHTML = this.responseText
         }
     };
-    xmlhttp.open("GET", "../../controladores/user/buscar.php?key=" + text, true)
-    xmlhttp.send()
+    if (usu == 'index') {
+        xmlhttp.open("GET", "../../controladores/user/buscar.php?key=" + text, true)
+        xmlhttp.send()
+    } else {
+        xmlhttp.open("GET", "../../controladores/user/buscarEnviados.php?key=" + text, true)
+        xmlhttp.send()
+    }
 }
 function openWindow(id, txt, code) {
     console.log(code)
@@ -38,5 +43,5 @@ function openWindow(id, txt, code) {
 function cluseWindow() {
     let windowFloat = document.getElementById("floatWindow")
     windowFloat.style.display = "none"
-} 
+}
 

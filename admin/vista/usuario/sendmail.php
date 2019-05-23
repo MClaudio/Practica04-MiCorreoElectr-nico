@@ -32,6 +32,10 @@ if (!isset($_SESSION['isLogin'])) {
             <!-- <div class="buscar">
                 <input type="search" placeholder="Buscar">
             </div> -->
+            <div class="buscar">
+                <input type="search" id="buscarRemitente" placeholder="Buscar por remitente"
+                    onkeyup="buscar(this, 'destino')">
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -57,7 +61,7 @@ if (!isset($_SESSION['isLogin'])) {
                         </tr>
                     </tfoot>
                     -->
-                <tbody>
+                <tbody id="data">
                     <?php
                     include '../../../config/conexionBD.php';
                     $sql = "SELECT * FROM usuario usu, mensaje msj WHERE usu.usu_codigo=msj.usu_destino AND 
