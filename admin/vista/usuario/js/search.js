@@ -38,5 +38,5 @@ function openWindow(id, txt, code) {
 function cluseWindow() {
     let windowFloat = document.getElementById("floatWindow")
     windowFloat.style.display = "none"
-}
+} 
 

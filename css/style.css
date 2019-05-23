@@ -236,15 +236,18 @@ body .mensaje form textarea{
     margin-top: 20px;
     width: 90%;
     border: 1px solid #e35d5b;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 body .floatWindow{
-    background-image: url("../img/window.png");
+    /* background-image: url("../img/window.png"); */
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     transition: all ease 1s;
+    z-index: 100;
     display: none;
     
 }body .floatWindow .window{

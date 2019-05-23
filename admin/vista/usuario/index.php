@@ -62,7 +62,7 @@ if (!isset($_SESSION['isLogin'])) {
                     <?php
                     include '../../../config/conexionBD.php';
                     $sql = "SELECT * FROM usuario usu, mensaje msj WHERE usu.usu_codigo=msj.usu_remitente AND 
-                    msj.usu_destino=" . $_SESSION['codigo'] . ";";
+                    msj.usu_destino=" . $_SESSION['codigo'] . " ORDER BY msj.mail_codigo DESC;";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {

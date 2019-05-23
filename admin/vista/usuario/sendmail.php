@@ -61,7 +61,7 @@ if (!isset($_SESSION['isLogin'])) {
                     <?php
                     include '../../../config/conexionBD.php';
                     $sql = "SELECT * FROM usuario usu, mensaje msj WHERE usu.usu_codigo=msj.usu_destino AND 
-                    msj.usu_remitente=" . $_SESSION['codigo'] . ";";
+                    msj.usu_remitente=" . $_SESSION['codigo'] . " ORDER BY msj.mail_codigo DESC;";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
@@ -86,7 +86,7 @@ if (!isset($_SESSION['isLogin'])) {
 
         </section>
     </div>
-    <footer>
+    <footer class="red">
         <?php
         include('../../../php/footer.php');
         ?>
