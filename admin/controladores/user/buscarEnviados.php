@@ -27,8 +27,8 @@ if ($_GET != '') {
         echo "</tr>";
     }
 } else {
-    $sql = "SELECT * FROM usuario usu, mensaje msj WHERE usu.usu_codigo=msj.usu_remitente AND 
-                    msj.usu_destino=" . $_SESSION['codigo'] . ";";
+    $sql = "SELECT * FROM usuario usu, mensaje msj WHERE usu.usu_codigo=msj.usu_destino AND 
+                    msj.usu_remitente=" . $_SESSION['codigo'] . ";";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {

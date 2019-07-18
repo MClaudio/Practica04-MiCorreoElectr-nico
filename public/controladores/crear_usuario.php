@@ -45,12 +45,9 @@ if (isset($_SESSION['isLogin'])) {
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
 
-
-
             $directorio = "../../img/fotos/" . $row['codigo'] . "/";
             mkdir($directorio, 0777, true);
             move_uploaded_file($temp, "../../img/fotos/" . $row['codigo'] . "/$foto");
-
 
             $cedula = isset($_POST["cedula"]) ? trim($_POST["cedula"]) : null;
             $nombre = isset($_POST["nombre"]) ? mb_strtoupper(trim($_POST["nombre"]), 'UTF-8') : null;
